@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+       <main>
+        <div class="fridge-container">
+            <div class="freezer">
+                <div class="one-container box-container">
+                </div>
+                <div class="two-container box-container"></div>
+                <div class="three-container box-container"></div>
+                <div class="four-container box-container"></div>
+                <div class="five-container box-container"></div>
+                <div class="six-container box-container"></div>
+            </div>
+        </div>
+        <div class="form-container">
+            <form>
+                <label for="item-name">
+                    Item Name
+                    <input type="text" name="item-name" id="" class="form-name">
+                </label>
+                <div>
+                    <label for="">
+                    Meat
+                    <input type="radio" name="type" id="" value="meat" class="form-type">
+                    </label>
+                <label for="">
+                    Veg
+                    <input type="radio" name="type" id="" value="veg" class="form-type">
+                </label>
+                <label for="">
+                    Carb
+                    <input type="radio" name="type" id="" value="carb" class="form-type">
+                </label>
+                <label for="">
+                    Desert
+                    <input type="radio" name="type" value="desert" class="form-type">
+                </label>
+                </div>
+                <label for="container-num">
+                    Container Number
+                    <input type="number" name="container-num" min=1 max=6 value=1 class="form-number">
+                </label>
+                <input type="submit" value="Create">
+            </form>
+        </div>
+       </main>
+        
+        <script src="main.js" async defer></script>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+*,*::before,*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+main
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    background-color: teal;
+}
+
+.fridge-container,.form-container{
+    flex-basis: 48%;
+    min-height: 95vh;
+    align-self: stretch;
+}
+
+.fridge-container
+{
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.form-container
+{
+    background-color: coral;
+}
+
+.freezer
+{
+    width: 95%;
+    background-color: black;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    gap: 0.5rem;
+    min-height: 100%;
+    padding: 1rem;
+}
+
+.box-container{
+    min-height: 100px;
+    width: 100%;
+    background-color: pink;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0.4rem;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.item{
+    flex-basis: 24%;
+    padding: 0.2rem;
+    background-color: lime;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-flow: column;
+    padding: 1rem;
+    background-color: hsl(200, 43%, 56%);
+    gap: 0.5rem;
+}
