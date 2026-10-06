@@ -36,7 +36,6 @@ form.addEventListener('submit', (e) => {
     formRadios.forEach((radio) => {
         if(radio.checked)
         {
-            alert(radio)
             fradio = radio.value;
         }
     })
@@ -60,8 +59,7 @@ function createItem(name,type,number)
     div.addEventListener('dragstart', (e) => {
         draggedItem = e.target;
     })
-    div.style.backgroundColor = type == 'meat' ? 'blue' : type == 'veg' ? 'green' : 'red'
-    debugger
+    div.style.backgroundColor = type == 'meat' ? '#D48C8C' : type == 'veg' ? 'hsl(121,46%,69%)' : type == 'carb' ? 'hsl(26,46%,69%)' : 'hsl(205,46%,69%)'
     switch (number) {
     case "1":
     freezer.querySelector('.one-container').appendChild(div)
