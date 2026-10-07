@@ -8,6 +8,8 @@ const formName = document.querySelector('.form-name');
 const formRadios= document.querySelectorAll('.form-type');
 const formNumber = document.querySelector('.form-number');
 
+const deleteBox = document.querySelector('.delete');
+
 
 
 items.forEach((item) => {
@@ -27,6 +29,23 @@ containers.forEach((container) => {
     })
 
 })
+
+deleteBox.addEventListener('dragover', (e) => {
+        deleteBox.classList.add('drop')
+        e.preventDefault();
+    })
+
+deleteBox.addEventListener('drop', (e) => {
+        e.preventDefault();
+        deleteBox.appendChild(draggedItem);
+        draggedItem.remove();
+        draggedItem = null;
+    })
+
+deleteBox.addEventListener('dragleave', (e) => {
+        deleteBox.classList.remove('drop')
+        e.preventDefault();
+    })
 
 
 form.addEventListener('submit', (e) => {
