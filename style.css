@@ -30,7 +30,10 @@ main
 
 .form-container
 {
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
 }
 
 .freezer
@@ -74,5 +77,76 @@ form{
     flex-flow: column;
     padding: 1rem;
     background-color: hsl(200, 43%, 56%);
-    gap: 0.5rem;
+    gap: 1rem;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.radios
+{
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+label
+{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-flow: column;
+    color: white;
+    gap: 0.4rem;
+}
+
+.radios label
+{
+    align-items: center;
+}
+
+label input
+{
+    border: none;
+    border-radius: 5px;
+    padding: 0.2rem;
+}
+
+
+.delete
+{
+    padding: 1rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid transparent 
+}
+
+.drop
+{
+    background-color: #efefef;
+    border: 2px dashed red;
+}
+
+
+@media (width <= 400px) {
+    main
+    {
+        flex-flow: column;
+    }
+
+    .fridge-container
+    {
+        padding: 0.2rem;
+    }
+
+.freezer
+{
+    width: 100%;
+}
+
+
 }
