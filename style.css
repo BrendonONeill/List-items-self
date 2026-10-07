@@ -113,6 +113,16 @@ label input
     padding: 0.2rem;
 }
 
+.submit
+{
+    width: 20%;
+    padding: 0.4rem;
+    border-radius: 5px;
+    background-color: hsl(200,43%,28%);
+    color: white;
+    border: none;
+}
+
 
 .delete
 {
@@ -140,15 +150,23 @@ label input
 
 
 @media (width <= 400px) {
-    main
-    {
-        flex-flow: column;
-    }
+main
+{
+    flex-flow: column;
+}
 
-    .fridge-container
-    {
-        padding: 0.2rem;
-    }
+.form-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column;
+}
+
+.fridge-container
+{
+    padding: 0.2rem;
+}
 
 .freezer
 {
@@ -157,7 +175,7 @@ label input
 
 .drawer
 {
-    background-color: lime;
+    background-color: hsl(199, 73%, 90%);
     position: fixed;
     height: 30%;
     border-radius: 5px;
@@ -180,13 +198,26 @@ label input
     position: absolute;
     height: 70px;
     width: 40px;
-    background-color: black;
+    background-color: hsl(20, 43%, 56%);
+    border-left: 2px solid white ;
     left: -32px;
     top: 50%;
     transform: translateY(-50%);
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.submit
+{
+    width: 25%;
+}
+
+.delete
+{
+    display: none;
+}
 
 
 
