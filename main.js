@@ -2,7 +2,8 @@ let containers = document.querySelectorAll('.box-container');
 const freezer = document.querySelector('.freezer');
 let items = document.querySelectorAll('.item');
 let draggedItem = null;
-let dh = document.querySelector('.drawer')
+let drawer = document.querySelector('.drawer');
+let drawerHandle = document.querySelector('.drawer-handle')
 
 const form = document.querySelector('form');
 const formName = document.querySelector('.form-name');
@@ -17,6 +18,11 @@ const deleteBoxDrawer = document.querySelector('.delete-drawer');
 items.forEach((item) => {
     item.addEventListener('dragstart', (e) => {
         draggedItem = e.target;
+    })
+
+    item.addEventListener('dragend', (e) => {
+        draggedItem = null;
+        drawer.classList.remove('drawer-open');
     })
 })
 
@@ -49,12 +55,12 @@ deleteBox.addEventListener('dragleave', (e) => {
         e.preventDefault();
     })
 
-dh.addEventListener('dragover',(e) => {
-    dh.classList.add('drawer-open')
+drawer.addEventListener('dragover',(e) => {
+    drawer.classList.add('drawer-open')
 })
 
-dh.addEventListener('dragleave',(e) => {
-    dh.classList.remove('drawer-open')
+drawerHandle.addEventListener('click',(e) => {
+    drawer.classList.remove('drawer-open')
 })
 
 
@@ -67,6 +73,7 @@ deleteBoxDrawer.addEventListener('drop', (e) => {
         e.preventDefault();
         draggedItem.remove();
         draggedItem = null;
+        drawer.classList.remove('drawer-open');
     })
 
 deleteBoxDrawer.addEventListener('dragleave', (e) => {
