@@ -18,6 +18,7 @@ main
     flex-basis: 48%;
     min-height: 95vh;
     align-self: stretch;
+    overflow: hidden;
 }
 
 .fridge-container
@@ -131,6 +132,12 @@ label input
     border: 2px dashed red;
 }
 
+.drawer{
+    display: none;
+}
+
+
+
 
 @media (width <= 400px) {
     main
@@ -147,6 +154,40 @@ label input
 {
     width: 100%;
 }
+
+.drawer
+{
+    background-color: lime;
+    position: fixed;
+    height: 30%;
+    border-radius: 5px;
+    width: 50%;
+    transform: translateX(150%);
+    transition: transform 250ms ease;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.drawer-open
+{
+    transform: translateX(70%);
+}
+
+.drawer-handle
+{
+    position: absolute;
+    height: 70px;
+    width: 40px;
+    background-color: black;
+    left: -32px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+}
+
+
 
 
 }

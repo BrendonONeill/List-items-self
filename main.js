@@ -2,6 +2,7 @@ let containers = document.querySelectorAll('.box-container');
 const freezer = document.querySelector('.freezer');
 let items = document.querySelectorAll('.item');
 let draggedItem = null;
+let dh = document.querySelector('.drawer')
 
 const form = document.querySelector('form');
 const formName = document.querySelector('.form-name');
@@ -9,6 +10,7 @@ const formRadios= document.querySelectorAll('.form-type');
 const formNumber = document.querySelector('.form-number');
 
 const deleteBox = document.querySelector('.delete');
+const deleteBoxDrawer = document.querySelector('.delete-drawer');
 
 
 
@@ -47,6 +49,31 @@ deleteBox.addEventListener('dragleave', (e) => {
         e.preventDefault();
     })
 
+dh.addEventListener('dragover',(e) => {
+    dh.classList.add('drawer-open')
+})
+
+dh.addEventListener('dragleave',(e) => {
+    dh.classList.remove('drawer-open')
+})
+
+
+deleteBoxDrawer.addEventListener('dragover', (e) => {
+        deleteBoxDrawer.classList.add('drop')
+        e.preventDefault();
+    })
+
+deleteBoxDrawer.addEventListener('drop', (e) => {
+        e.preventDefault();
+        draggedItem.remove();
+        draggedItem = null;
+    })
+
+deleteBoxDrawer.addEventListener('dragleave', (e) => {
+        deleteBoxDrawer.classList.remove('drop')
+        e.preventDefault();
+    })
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -63,6 +90,8 @@ form.addEventListener('submit', (e) => {
 
 
 })
+
+
 
 
 function createItem(name,type,number)
