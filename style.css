@@ -3,6 +3,19 @@
     margin: 0;
     box-sizing: border-box;
     font-size: 16px;
+    font-family: "Roboto", sans-serif;
+}
+
+nav,footer
+{
+    background-color: hsl(200,43%,28%);
+    color: white;
+    padding: 1rem;
+}
+
+h1
+{
+    font-size: 1.8rem;
 }
 
 main
@@ -12,6 +25,7 @@ main
     justify-content: center;
     gap: 1rem;
     width: 100%;
+    background: url(../bg.svg);
 }
 
 .fridge-container,.form-container{
@@ -35,6 +49,7 @@ main
     align-items: center;
     justify-content: center;
     flex-flow: column;
+    row-gap: 2rem;
 }
 
 .freezer
@@ -53,7 +68,6 @@ main
 .box-container{
     min-height: 100px;
     width: 100%;
-    background-color: hsl(0,0%,94%);
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -61,6 +75,8 @@ main
     gap: 0.4rem;
     flex-wrap: wrap;
     border-radius: 5px;
+    position: relative;
+    background: hsl(0,0%,94%) url(../bg-box.svg);
 }
 
 .item{
@@ -71,6 +87,23 @@ main
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+}
+
+.badge-number
+{
+    background-color: grey;
+    padding: 0.2rem;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background-color: white;
+    border: 2px solid hsl(220,25%,67%);
 }
 
 form{
@@ -108,9 +141,14 @@ label
 
 label input
 {
-    border: none;
+    border: 2px solid hsl(200, 43%, 56%);
     border-radius: 5px;
     padding: 0.2rem;
+}
+
+.error
+{
+   border: 2px solid red; 
 }
 
 .submit
@@ -121,6 +159,7 @@ label input
     background-color: hsl(200,43%,28%);
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 
@@ -133,7 +172,8 @@ label input
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    border: 2px solid transparent 
+    border: 2px solid transparent;
+    background-color: white;
 }
 
 .drop
