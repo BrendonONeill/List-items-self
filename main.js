@@ -46,6 +46,7 @@ deleteBox.addEventListener('dragover', (e) => {
 deleteBox.addEventListener('drop', (e) => {
         e.preventDefault();
         deleteBox.appendChild(draggedItem);
+        deleteBox.classList.remove('drop')
         draggedItem.remove();
         draggedItem = null;
     })
@@ -82,8 +83,22 @@ deleteBoxDrawer.addEventListener('dragleave', (e) => {
     })
 
 
+formName.addEventListener('blur', (e) => {
+    e.preventDefault()
+    console.log('test')
+    if(e.target.value == '')
+    {
+        formName.classList.add('error')
+    }
+    else
+    {
+        formName.classList.remove('error')
+    }
+})
+
 form.addEventListener('submit', (e) => {
     e.preventDefault()
+    if(formName.value != ''){
     let fname = formName.value;
     let fradio
     formRadios.forEach((radio) => {
@@ -94,8 +109,7 @@ form.addEventListener('submit', (e) => {
     })
     let fnum = formNumber.value;
     createItem(fname,fradio,fnum)
-
-
+    }
 })
 
 
@@ -114,7 +128,26 @@ function createItem(name,type,number)
     div.addEventListener('dragstart', (e) => {
         draggedItem = e.target;
     })
-    div.style.backgroundColor = type == 'meat' ? '#D48C8C' : type == 'veg' ? 'hsl(121,46%,69%)' : type == 'carb' ? 'hsl(26,46%,69%)' : 'hsl(205,46%,69%)'
+    if(type == 'meat')
+    {
+        div.style.backgroundColor =  '#D48C8C';
+        div.style.color = 'black';
+    }
+    else if(type == 'veg')
+    {
+        div.style.backgroundColor =  'hsl(121,46%,69%)';
+        div.style.color = 'black';
+    }
+    else if(type == 'carb')
+    {
+        div.style.backgroundColor =  'hsl(26,46%,69%)';
+        div.style.color = 'black';
+    }
+    else
+    {
+       div.style.backgroundColor = 'hsl(205,46%,69%)';
+       div.style.color = 'black';
+    }
     switch (number) {
     case "1":
     freezer.querySelector('.one-container').appendChild(div)
